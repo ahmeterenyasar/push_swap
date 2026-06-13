@@ -17,13 +17,9 @@ t_stack	*stack_init(int capacity)
 
 void	stack_free(t_stack *stack)
 {
-    if (!stack)
-        return ;
+	if (!stack)
+		return ;
 	if (stack->data)
-    {
-        free(stack->data);
-        stack->data = NULL;
-    }
-    free(stack);
-    stack = NULL;               
+		free(stack->data);
+	free(stack);
 }
