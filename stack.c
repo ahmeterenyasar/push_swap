@@ -14,3 +14,8 @@ t_stack	*stack_init(int capacity)
 	}
 	return (stack);
 }
+
+void	stack_free(t_stack *stack)
+{
+    
+}
