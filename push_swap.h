@@ -15,5 +15,7 @@ typedef struct s_stack
 	int	capacity;
 }	t_stack;
 
+t_stack	*stack_init(int capacity);
+void	stack_free(t_stack *stack);
 
 #endif
