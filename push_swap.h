@@ -18,4 +18,8 @@ typedef struct s_stack
 t_stack	*stack_init(int capacity);
 void	stack_free(t_stack *stack);
 
+// Parsing
+int		is_valid_format(char *str);
+long	ft_atol(const char *str);
+
 #endif
