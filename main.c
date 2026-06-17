@@ -2,22 +2,16 @@
 #include <stdio.h>
 #include "push_swap.h"
 
-int main(void)
+int main(int argc, char **argv)
 {
 	t_stack	*a;
-	a = stack_init(5);
-	if (!a)
-	{
-		printf("Malloc patladi!\n");
-		return (1);
-	}
+	int capacity;
 
-	printf("Stack olusturuldu.\n");
-	printf("Kapasite: %d\n", a->capacity);
-	printf("Mevcut Eleman Sayisi: %d\n", a->size);
+	if (argc < 2)
+		return (0);
+	// burda hata varsa -1 dönelim error atarız
+	capacity = get_total_capacity(argc, argv);
 
-	stack_free(a);
-	printf("Stack bellekten silindi. Temiz is!\n");
 
 	return (0);
 }
