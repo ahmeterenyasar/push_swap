@@ -11,7 +11,9 @@ static int	is_digit(char c)
 }
 
 static long	ft_strict_atol(const char **s, int *er_mg)
-{}
+{
+    return 213123;
+}
 
 int get_total_capacity(int argc, char **argv)
 {
@@ -49,13 +51,9 @@ normalde split kullanırdım ama saygıdeğer şizofren kurulun
 
 int parser(t_stack *a, int argc, char **argv)
 {
-    /*
-    commit mesajlarını da ben yazıyorum he haberiniz olsun
-    */
-   // anlamayan bazı insanlar olur diye açıklayayım index 1 argv[1]i inceleyerek başlayalım diye kapito?
    int i = 1;
    int err = 0;
-   long value; // long yapmamın sebebi integer'dan büyük girilse de kontrol edeceğim ama programa işlenmeyecek tabii ki aslında unsigned long long da yapılabilir
+   long value;
    char *ptr;
 
    while (i < argc)
