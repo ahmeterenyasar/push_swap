@@ -24,7 +24,6 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
-	// şimdi başarılı bir şekilde sayıyoruz ama parse etme kısmı lazım
 	if (!parser(a, argc, argv))
 	{
 		write(2, "Error\n", 6);
@@ -35,6 +34,10 @@ int main(int argc, char **argv)
 	printf("Mr.BrkyKapasite: %d\n", a->capacity);
 	for (int i = 0; i < a->size; i++)
 		printf("[%d] -> %d\n", i, a->data[i]);
+
+
+	// şimdi mükerrerlik kontrolü yapacağız ingilizce öğretmeni olduğunu idda edenler için duplicate check diyebililiriz.
+	
 
 	return (0);
 }
