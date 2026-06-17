@@ -15,24 +15,30 @@ static long	ft_strict_atol(const char **s, int *er_mg)
 
 int get_total_capacity(int argc, char **argv)
 {
-    int i = 0;
-    int counter = 0;
-    char *ptr;
-    while (i < argc)
-    {
-        ptr = argv[i];
-        while (*ptr)
-        {
-            if (!is_space(*ptr) && !is_digit(*ptr))
-            {
-                return (0);
-            }
-            ptr++;
-        }
-        i++;
-    }
-    
-    
+	int			i = 1;
+	int			counter = 0;
+	char	*ptr;
+
+	while (i < argc)
+	{
+		ptr = argv[i];
+		while (*ptr)
+		{
+			while (is_space(*ptr))
+				ptr++;
+			if (*ptr == '\0')
+				break;
+			if (*ptr == '+' || *ptr == '-')
+				ptr++;
+			if (!is_digit(*ptr))
+				return (-1);
+			while (is_digit(*ptr))
+				ptr++;
+			counter++;
+		}
+		i++;
+	}
+	return (counter);
 }
 
 /*

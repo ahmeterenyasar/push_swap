@@ -21,5 +21,6 @@ void	stack_free(t_stack *stack);
 // Parsing
 int		is_valid_format(char *str);
 long	ft_atol(const char *str);
+int		get_total_capacity(int argc,char **argv);
 
 #endif
