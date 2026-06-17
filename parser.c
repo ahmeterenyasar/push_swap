@@ -12,7 +12,10 @@ static int	is_digit(char c)
 
 static long	ft_strict_atol(const char **s, int *er_mg)
 {
-    return 213123;
+    long res = 0;
+    int result_sign = 1;
+    
+
 }
 
 int get_total_capacity(int argc, char **argv)
