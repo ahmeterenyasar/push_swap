@@ -65,7 +65,18 @@ int parser(t_stack *a, int argc, char **argv)
         {
             while (is_space(*ptr))
                 ptr++;
-            
+            if (*ptr == '\0')
+            {
+                break;
+            }
+            value = ft_strict_atol(&ptr, &err);
+            if (err)
+            {
+                return (0);
+            }
+            a->data[a->size++] = value;
         }
+        i++;
    }
+   return 1;
 }
