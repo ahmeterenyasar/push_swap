@@ -26,12 +26,10 @@ int main(int argc, char **argv)
 	{
 		write(2, "Error\n", 6);
 		stack_free(env.a);
+		stack_free(env.b);
 		return (1);
 	}
-	
 
-
-	// şimdi mükerrerlik kontrolü yapacağız ingilizce öğretmeni olduğunu idda edenler için duplicate check diyebililiriz.
 	if (!mükerrer_check(env.a))
 	{
 		write(2, "Error\n", 6);

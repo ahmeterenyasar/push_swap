@@ -15,15 +15,13 @@ static long	ft_strict_atol(const char **s, int *er_mg)
     long res = 0;
     int result_sign = 1;
 
-    //önce işareti yakalayacğaım tamam mı anladık mı bkaın hata yapmıyorum ama şuan hata yapılacak bir durum yok valla kopya falan değil ilaçlarınızı alın
     if (**s == '-' || **s == '+')
     {
         if (**s == '-')
             result_sign = -1;
         (*s)++;
     }
-    
-    // işaretten sonra sayı gelmesi lazım diye düşünüyorum eğer sayı değilse errrrror
+
     if (!is_digit(**s))
     {
         *er_mg = 1;
