@@ -23,6 +23,15 @@ static long	ft_strict_atol(const char **s, int *er_mg)
         (*s)++;
     }
     
+    // işaretten sonra sayı gelmesi lazım diye düşünüyorum eğer sayı değilse errrrror
+    if (!is_digit(**s))
+    {
+        *er_mg = 1;
+        return (0);
+    }
+
+
+    
 
 }
 
