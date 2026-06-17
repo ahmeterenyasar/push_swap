@@ -36,7 +36,7 @@ static long	ft_strict_atol(const char **s, int *er_mg)
         (*s)++;
     }
     
-    if (**s != '\0' || is_space(**s))
+    if (**s != '\0' && !is_space(**s))
     {
         *er_mg = 1;
         return (0);
@@ -83,7 +83,7 @@ int parser(t_stack *a, int argc, char **argv)
    int i = 1;
    int err = 0;
    long value;
-   char *ptr;
+   const char *ptr;
 
    while (i < argc)
    {
@@ -93,15 +93,11 @@ int parser(t_stack *a, int argc, char **argv)
             while (is_space(*ptr))
                 ptr++;
             if (*ptr == '\0')
-            {
                 break;
-            }
             value = ft_strict_atol(&ptr, &err);
-            if (err)
-            {
+            if (err || value > 2147483647 || value < -2147483648)
                 return (0);
-            }
-            a->data[a->size++] = value;
+            a->data[a->size++] = (int)value;
         }
         i++;
    }
