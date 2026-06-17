@@ -30,9 +30,18 @@ static long	ft_strict_atol(const char **s, int *er_mg)
         return (0);
     }
 
-
+    while (is_digit(**s))
+    {
+        res = res * 10 + (**s - '0');
+        (*s)++;
+    }
     
-
+    if (**s != '\0' || is_space(**s))
+    {
+        *er_mg = 1;
+        return (0);
+    }
+    return res * result_sign;
 }
 
 int get_total_capacity(int argc, char **argv)
