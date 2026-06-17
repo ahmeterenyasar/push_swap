@@ -46,3 +46,10 @@ normalde split kullanırdım ama saygıdeğer şizofren kurulun
  bunu intihal olarak hayal edebileceğini düşünerekten double pointer
  gibi pointer ilerleterek kontrol edeceğim. anladınız mı?
 */
+
+int parser(t_stack *a, int argc, char **argv)
+{
+    /*
+    burda bi commit atiyim yoksa yine iftira atacaklar
+    */
+}

@@ -10,10 +10,31 @@ int main(int argc, char **argv)
 
 	if (argc < 2)
 		return (0);
-	// burda hata varsa -1 dönelim error atarız
 	capacity = get_total_capacity(argc, argv);
-	printf("%d", capacity);
+	if (capacity <= 0)
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
 
+	a = stack_init(capacity);
+	if (!a)
+	{
+		write(2, "Error\n", 6);
+		return (1);
+	}
+
+	// şimdi başarılı bir şekilde sayıyoruz ama parse etme kısmı lazım
+	if (!parser(a, argc, argv))
+	{
+		write(2, "Error\n", 6);
+		stack_free(a);
+		return (1);
+	}
+	
+	printf("Mr.BrkyKapasite: %d\n", a->capacity);
+	for (int i = 0; i < a->size; i++)
+		printf("[%d] -> %d\n", i, a->data[i]);
 
 	return (0);
 }
