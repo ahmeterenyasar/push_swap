@@ -37,7 +37,13 @@ int main(int argc, char **argv)
 
 
 	// şimdi mükerrerlik kontrolü yapacağız ingilizce öğretmeni olduğunu idda edenler için duplicate check diyebililiriz.
-	
+	if (!mükerrer_check(a))
+	{
+		write(2, "Error\n", 6);
+		stack_free(a);
+		return (1);
+	}
+
 
 	return (0);
 }

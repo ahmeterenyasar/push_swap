@@ -15,14 +15,6 @@ bende bunun için bir üst wrapper struct'ı koyacağım yani bütün bunlar ayr
 izleniyormuş gibi düşünebilirsiniz
 */
 
-typedef struct s_environment
-{
-	t_stack *a;
-	t_stack *b;
-	// bunların da adını değişek aq stack dedik diye intihal yerim belki idk
-	int operation_counter;
-	int print_mode; // -> tam olarak burası yazdırmamızı sağlayacak okkey kafamda öyle kurdum yani
-} t_env;
 
 typedef struct s_stack
 {
@@ -30,6 +22,15 @@ typedef struct s_stack
 	int	size;
 	int	capacity;
 }	t_stack;
+
+typedef struct s_environment
+{
+	t_stack *a;
+	t_stack *b;
+	int operation_counter;
+	int print_mode;
+} t_env;
+
 
 t_stack	*stack_init(int capacity);
 void	stack_free(t_stack *stack);
@@ -39,6 +40,8 @@ int		is_valid_format(char *str);
 long	ft_atol(const char *str);
 int		get_total_capacity(int argc,char **argv);
 int		parser(t_stack *a, int argc, char **argv);
+int mükerrer_check(t_stack *a);
+
 
 
 #endif
