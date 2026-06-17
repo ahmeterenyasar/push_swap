@@ -11,7 +11,7 @@ int mükerrer_check(t_stack *a)
         while (j < a->size)
         {
             if (a->data[i] == a->data[j])
-                return (1);
+                return (0);
             j++;
         }
         i++;

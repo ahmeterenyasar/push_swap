@@ -29,7 +29,7 @@ typedef struct s_environment
 	t_stack *b;
 	int operation_counter;
 	int print_mode;
-} t_env;
+} t_environment;
 
 
 t_stack	*stack_init(int capacity);
