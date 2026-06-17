@@ -50,6 +50,22 @@ normalde split kullanırdım ama saygıdeğer şizofren kurulun
 int parser(t_stack *a, int argc, char **argv)
 {
     /*
-    burda bi commit atiyim yoksa yine iftira atacaklar
+    commit mesajlarını da ben yazıyorum he haberiniz olsun
     */
+   // anlamayan bazı insanlar olur diye açıklayayım index 1 argv[1]i inceleyerek başlayalım diye kapito?
+   int i = 1;
+   int err = 0;
+   long value; // long yapmamın sebebi integer'dan büyük girilse de kontrol edeceğim ama programa işlenmeyecek tabii ki aslında unsigned long long da yapılabilir
+   char *ptr;
+
+   while (i < argc)
+   {
+        ptr = argv[i];
+        while (*ptr)
+        {
+            while (is_space(*ptr))
+                ptr++;
+            
+        }
+   }
 }
