@@ -43,6 +43,10 @@ void convert_to_indexed(t_stack *a);
 
 // Operations
 void sa(t_environment *env);
+void sb(t_environment *env);
+void ss(t_environment *env);
+void pa(t_environment *env);
+void pb(t_environment *env);
 void ra(t_environment *env);
 void rra(t_environment *env);
 
