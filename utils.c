@@ -25,7 +25,10 @@ void convert_to_indexed(t_stack *a)
 
     int *new_arr = malloc(sizeof(int) * a->size);
     if (!new_arr)
-        return ;
+    {
+        write(2, "Error\n", 6);
+        exit(1); 
+    }
     int smaller_count;
 
         i = 0;
@@ -35,15 +38,10 @@ void convert_to_indexed(t_stack *a)
     		j = 0;
     		while (j < a->size)
     		{
-    			/*
-                kendisinden daha küçük kaç sayı var sayıcaz ve ona göre indexlicez
-                bu daha faerkllı bir manntık kapiş
-                */ 
     			if (a->data[j] < a->data[i])
     				smaller_count++;
     			j++;
     		}
-    		// bulduğumuz sayıyı o elemanın yeni indeksi yapacaz
     		new_arr[i] = smaller_count;
     		i++;
     	}

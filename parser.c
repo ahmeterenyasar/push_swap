@@ -44,10 +44,12 @@ static long	ft_strict_atol(const char **s, int *er_mg)
 
 int get_total_capacity(int argc, char **argv)
 {
-	int			i = 1;
-	int			counter = 0;
+    int		i;
+	int		counter;
 	char	*ptr;
 
+    i = 1;
+    counter = 0;
 	while (i < argc)
 	{
 		ptr = argv[i];
@@ -70,19 +72,15 @@ int get_total_capacity(int argc, char **argv)
 	return (counter);
 }
 
-/*
-normalde split kullanırdım ama saygıdeğer şizofren kurulun
- bunu intihal olarak hayal edebileceğini düşünerekten double pointer
- gibi pointer ilerleterek kontrol edeceğim. anladınız mı?
-*/
-
 int parser(t_stack *a, int argc, char **argv)
 {
-   int i = 1;
-   int err = 0;
+   int i;
+   int err;
    long value;
    const char *ptr;
 
+   i = 1;
+   err = 0;
    while (i < argc)
    {
         ptr = argv[i];
