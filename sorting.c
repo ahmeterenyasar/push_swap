@@ -1,15 +1,5 @@
 #include "push_swap.h"
 
-
-/*
-şimdi napacaz düşünelim önce bir kaç durum var onları ele alacaz:
-sıralı gelmiş olabilir bu 1
-şu 3-5 küçük sayılı durumda radix falan diğerleri de verimsiz çalışıyor o yüzden
-özel case eklicem i dont care yani
-şimdilik böyle
-*/
-
-
 int is_sorted(t_stack *a)
 {
     int i;
@@ -23,30 +13,30 @@ int is_sorted(t_stack *a)
     return (1);
 }
 
-void to_top(t_environment *env, int en_uste_cikarilacak_hedef_deger)
+void to_top(t_environment *env, int wanted_number)
 {
-	int hedef_degerin_stackteki_konumu;
-	int stack_a_toplam_eleman_sayisi;
-	int asagidan_kac_adimda_ulasilacagi;
+	int current_location;
+	int total_items;
+	int inverse_distance;
 
-	hedef_degerin_stackteki_konumu = 0;
+	current_location = 0;
 	
-	while (env->a->data[hedef_degerin_stackteki_konumu] != en_uste_cikarilacak_hedef_deger)
+	while (env->a->data[current_location] != wanted_number)
 	{
-		hedef_degerin_stackteki_konumu++;
+		current_location++;
 	}
 		
-	stack_a_toplam_eleman_sayisi = env->a->size;
+	total_items = env->a->size;
 	
-	if (hedef_degerin_stackteki_konumu <= (stack_a_toplam_eleman_sayisi / 2))
+	if (current_location <= (total_items / 2))
 	{
-		while (hedef_degerin_stackteki_konumu-- > 0)
+		while (current_location-- > 0)
 			ra(env);
 	}
     else
 	{
-		asagidan_kac_adimda_ulasilacagi = stack_a_toplam_eleman_sayisi - hedef_degerin_stackteki_konumu;
-		while (asagidan_kac_adimda_ulasilacagi-- > 0)
+		inverse_distance = total_items - current_location;
+		while (inverse_distance-- > 0)
 			rra(env);
 	}
 }
