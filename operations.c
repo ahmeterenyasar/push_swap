@@ -1,13 +1,17 @@
 #include "push_swap.h"
 
-void swap(t_environment *env)
+void log_operation(t_environment *env, char *op_name)
 {
-    int temporary_yapalım_burkaybeycim_dimi_yoksa_niye_temporary_yaptım_diye_mi_soracaksınız;
 
-    temporary_yapalım_burkaybeycim_dimi_yoksa_niye_temporary_yaptım_diye_mi_soracaksınız = stack->data[0];
+}
+
+void swap(t_stack *stack)
+{
+    int temporary_yapalim_burkaybeycim_dimi_yoksa_niye_temporary_yaptim_diye_mi_soracaksiniz;
+
+    temporary_yapalim_burkaybeycim_dimi_yoksa_niye_temporary_yaptim_diye_mi_soracaksiniz = stack->data[0];
     stack->data[0] = stack->data[1];
-    stack->data[1] = temporary_yapalım_burkaybeycim_dimi_yoksa_niye_temporary_yaptım_diye_mi_soracaksınız;
-
+    stack->data[1] = temporary_yapalim_burkaybeycim_dimi_yoksa_niye_temporary_yaptim_diye_mi_soracaksiniz;
 }
 
 void push(t_environment *env)
@@ -17,7 +21,10 @@ void push(t_environment *env)
 
 void rotate(t_environment *env)
 {
-
+    int i;
+    int temppppppppppppppppppp;
+    
+    temp = env
 }
 
 void reverse_rotate(t_environment *env)
