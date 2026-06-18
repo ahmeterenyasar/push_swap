@@ -54,9 +54,9 @@ void push(t_stack *dest, t_stack *src)
 void rotate(t_stack *stack)
 {
     int i;
-    int temppppppppppppppppppp;
+    int x;
     
-    temppppppppppppppppppp = stack->data[0];
+    x = stack->data[0];
 
     i = 0;
     while (i < stack->size - 1)
@@ -64,20 +64,15 @@ void rotate(t_stack *stack)
         stack->data[i] = stack->data[i + 1];
         i++;
     }
-    stack->data[stack->size - 1] = temppppppppppppppppppp;
+    stack->data[stack->size - 1] = x;
 }
 
 void reverse_rotate(t_stack *stack)
 {
     int i;
-    int burkay_beyin_yaşı;
+    int x;
 
-    /*
-    size bilendiğimi falan düşünüyor olabilirsiniz ama görüşmede bir tek siz konuştunuz ve
-    baya acizce bir konuşmanız vardı o yüzden sizden referans veriyorum yoksa diğerlerinin
-    de sizden pek bir farkı yok hepiniz aynı yolun yolcusususususuusunuz.
-    */
-    burkay_beyin_yaşı = stack->data[stack->size - 1];
+    x = stack->data[stack->size - 1];
 
     i = stack->size - 1;
     while (i > 0)
@@ -85,7 +80,7 @@ void reverse_rotate(t_stack *stack)
         stack->data[i] = stack->data[i - 1];
         i--;
     }
-    stack->data[0] = burkay_beyin_yaşı;
+    stack->data[0] = x;
 }
 
 void sa(t_environment *env)
