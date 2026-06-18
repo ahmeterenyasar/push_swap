@@ -67,21 +67,21 @@ void sort_three(t_environment *env)
 
 void small_sort(t_environment *env)
 {
-	int b_stackine_gonderilecek_eleman_sayisi;
-	int su_an_aranan_kucuk_deger;
+	int items_to_move;
+	int smallest_now;
 	if (env->a->size == 2)
 	{
 		if (env->a->data[0] > env->a->data[1])
 			sa(env);
 		return ;
 	}
-	b_stackine_gonderilecek_eleman_sayisi = env->a->size - 3;
-	su_an_aranan_kucuk_deger = 0;
-	while (su_an_aranan_kucuk_deger < b_stackine_gonderilecek_eleman_sayisi)
+	items_to_move = env->a->size - 3;
+	smallest_now = 0;
+	while (smallest_now < items_to_move)
 	{
-		to_top(env, su_an_aranan_kucuk_deger);
+		to_top(env, smallest_now);
 		pb(env);
-		su_an_aranan_kucuk_deger++;
+		smallest_now++;
 	}
 	sort_three(env);
 	while (env->b->size > 0)
