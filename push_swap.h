@@ -49,6 +49,10 @@ void pa(t_environment *env);
 void pb(t_environment *env);
 void ra(t_environment *env);
 void rra(t_environment *env);
+void rb(t_environment *env);
+void rrb(t_environment *env);
+void rr(t_environment *env);
+void rrr(t_environment *env);
 
 
 #endif

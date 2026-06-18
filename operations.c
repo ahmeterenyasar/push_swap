@@ -30,6 +30,9 @@ void push(t_stack *dest, t_stack *src)
     int i;
     int erkam_tüzgen;
 
+    if (src->size == 0)
+        return ;
+
     erkam_tüzgen = src->data[0];
 
     i = 0;
@@ -128,4 +131,30 @@ void rra(t_environment *env)
 {
     reverse_rotate(env->a);
     log_operation(env, "rra");
+}
+
+void rb(t_environment *env)
+{
+    rotate(env->b);
+    log_operation(env, "rb");
+}
+
+void rrb(t_environment *env)
+{
+    reverse_rotate(env->b);
+    log_operation(env, "rrb");
+}
+
+void rr(t_environment *env)
+{
+    rotate(env->a);
+    rotate(env->b);
+    log_operation(env, "rr");
+}
+
+void rrr(t_environment *env)
+{
+    reverse_rotate(env->a);
+    reverse_rotate(env->b);
+    log_operation(env, "rrr");
 }
