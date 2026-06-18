@@ -9,9 +9,68 @@ sıralı gelmiş olabilir bu 1
 şimdilik böyle
 */
 
+
+int is_sorted(t_stack *a)
+{
+    int i;
+    i = 0;
+    while (i < a->size - 1)
+    {
+        if (a->data[i] > a->data[i + 1])
+            return (0);
+        i++;
+    }
+    return (1);
+}
+
+void to_top(t_environment *env, int en_uste_cikarilacak_hedef_deger)
+{
+}
+
+void sort_three(t_environment *env)
+{
+}
+
+
+void small_sort(t_environment *env)
+{
+	int b_stackine_gonderilecek_eleman_sayisi;
+	int su_an_aranan_kucuk_deger;
+	if (env->a->size == 2)
+	{
+		if (env->a->data[0] > env->a->data[1])
+			sa(env);
+		return ;
+	}
+    /*
+    mantık şöyle a'da 3 tane bırakıcaz o yüzden çıkarma işlemi yapıcaz b'de kaç tane olacağını bulabilmek için
+    */
+	b_stackine_gonderilecek_eleman_sayisi = env->a->size - 3;
+	su_an_aranan_kucuk_deger = 0;
+	while (su_an_aranan_kucuk_deger < b_stackine_gonderilecek_eleman_sayisi)
+	{
+		to_top(env, su_an_aranan_kucuk_deger);
+		pb(env);
+		su_an_aranan_kucuk_deger++;
+	}
+	sort_three(env);
+}
+
 void radix_sort(t_environment *env)
 {
     int i;
     int bit;
+
+    if (is_sorted(env->a))
+    {
+        return ;
+    }
+    if (env->a->size <= 5)
+    {
+        return (small_sort(env));
+    }
+
+    
+
 
 }
