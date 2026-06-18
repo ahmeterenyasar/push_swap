@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 
 	env.operation_counter = 0;
 	env.print_mode = 1;
-	if (!parser(env.a, argc, argv) || !mükerrer_check(env.a))
+	if (!parser(env.a, argc, argv) || !has_no_copies(env.a))
 	{
 		write(2, "Error\n", 6);
 		stack_free(env.a);

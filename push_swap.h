@@ -6,16 +6,6 @@
 #include <unistd.h>
 #include <limits.h>
 
-
-/*
-burada çok güzel bir çakallık yapacağım yeni evaluation pagede
-live coding kısmında bizden yanlış hatırlamıyorsam operasyonları değil
-kaç adet yapıldığını yazdırmamızı istiyormuş akran öğrenmesiyle öğrendim bu bilgiyi.
-bende bunun için bir üst wrapper struct'ı koyacağım yani bütün bunlar ayrı bir pencerede
-izleniyormuş gibi düşünebilirsiniz
-*/
-
-
 typedef struct s_stack
 {
 	int	*data;
@@ -36,10 +26,10 @@ t_stack	*stack_init(int capacity);
 void	stack_free(t_stack *stack);
 
 // Parsing
-int		get_total_capacity(int argc,char **argv);
+int		get_total_capacity(int argc, char **argv);
 int		parser(t_stack *a, int argc, char **argv);
-int mükerrer_check(t_stack *a);
-void convert_to_indexed(t_stack *a);
+int		has_no_copies(t_stack *a);
+void	convert_to_indexed(t_stack *a);
 
 // Operations
 void sa(t_environment *env);
@@ -54,7 +44,7 @@ void rrb(t_environment *env);
 void rr(t_environment *env);
 void rrr(t_environment *env);
 
-void to_top(t_environment *env, int en_uste_cikarilacak_hedef_deger);
+void to_top(t_environment *env, int wanted_number);
 void radix_sort(t_environment *env);
 int get_max_bits(int n);
 

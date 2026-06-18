@@ -109,34 +109,32 @@ void radix_sort(t_environment *env)
 {
     int i;
     int bit;
-
-    if (is_sorted(env->a))
-    {
-        return ;
-    }
-    if (env->a->size <= 5)
-    {
-        return (small_sort(env));
-    }
-
     int size;
     int total_bits;
+
+    if (is_sorted(env->a))
+        return ;
+    if (env->a->size <= 5)
+    {
+        small_sort(env);
+        return ;
+    }
     total_bits = get_max_bits(env->a->size);
-	bit = 0;
-	while (bit < total_bits)
-	{
-		size = env->a->size;
-		i = 0;
-		while (i < size)
-		{
-			if (((env->a->data[0] >> bit) & 1) == 0)
-				pb(env);
-			else
-				ra(env);
-			i++;
-		}
-		while (env->b->size > 0)
-			pa(env);
-		bit++;
-	}
+    bit = 0;
+    while (bit < total_bits)
+    {
+        size = env->a->size;
+        i = 0;
+        while (i < size)
+        {
+            if (((env->a->data[0] >> bit) & 1) == 0)
+                pb(env);
+            else
+                ra(env);
+            i++;
+        }
+        while (env->b->size > 0)
+            pa(env);
+        bit++;
+    }
 }
