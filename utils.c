@@ -18,3 +18,8 @@ int mükerrer_check(t_stack *a)
     }
     return (1);
 }
+
+void convert_to_indexed(t_stack *a)
+{
+    
+}
