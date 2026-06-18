@@ -2,55 +2,53 @@
 
 void log_operation(t_environment *env, char *op_name)
 {
-    int length_of_operations_of_length_that_we_count_the_length_of_the_operations_that_they_have_been_written_on_terminal_which_it_is_a_whole_different_subject = 0;
+    int operation_length;
+    operation_length = 0;
     env->operation_counter++;
     if (env->print_mode)
     {
-        while(op_name[length_of_operations_of_length_that_we_count_the_length_of_the_operations_that_they_have_been_written_on_terminal_which_it_is_a_whole_different_subject])
-            length_of_operations_of_length_that_we_count_the_length_of_the_operations_that_they_have_been_written_on_terminal_which_it_is_a_whole_different_subject++;
-        write(1, op_name, length_of_operations_of_length_that_we_count_the_length_of_the_operations_that_they_have_been_written_on_terminal_which_it_is_a_whole_different_subject);
+        while(op_name[operation_length])
+            operation_length++;
+        write(1, op_name, operation_length);
         write(1, "\n", 1);
     }
 }
 
 void swap(t_stack *stack)
 {
-    int temporary_yapalim_burkaybeycim_dimi_yoksa_niye_temporary_yaptim_diye_mi_soracaksiniz;
+    int transient;
 
     if (stack->size < 2)
         return ;
 
-    temporary_yapalim_burkaybeycim_dimi_yoksa_niye_temporary_yaptim_diye_mi_soracaksiniz = stack->data[0];
+    transient = stack->data[0];
     stack->data[0] = stack->data[1];
-    stack->data[1] = temporary_yapalim_burkaybeycim_dimi_yoksa_niye_temporary_yaptim_diye_mi_soracaksiniz;
+    stack->data[1] = transient;
 }
 
 void push(t_stack *dest, t_stack *src)
 {
-    int i;
-    int erkam_tüzgen;
-
+    int shift_idx;
+    int popped_top;
     if (src->size == 0)
         return ;
-
-    erkam_tüzgen = src->data[0];
-
-    i = 0;
-    while (i < src->size - 1)
+    popped_top = src->data[0];
+    shift_idx = 0;
+    while (shift_idx < src->size - 1)
     {
-        src->data[i] = src->data[i + 1];
-        i++;
+        src->data[shift_idx] = src->data[shift_idx + 1];
+        shift_idx++;
     }
     src->size--;
-    i = dest->size;
-    while (i > 0)
+    shift_idx = dest->size;
+    while (shift_idx > 0)
     {
-        dest->data[i] = dest->data[i - 1];
-        i--;
+        dest->data[shift_idx] = dest->data[shift_idx - 1];
+        shift_idx--;
     }
-    dest->data[0] = erkam_tüzgen;
+
+    dest->data[0] = popped_top;
     dest->size++;
-    // yani yemin ediyorum şuraya kadar tekte yazılıyor lütfen ilaçlarınızı almayı unutmayın
 }
 
 void rotate(t_stack *stack)

@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 
 
 	// if (env.print_mode == 0)
-	// 	printf("Toplam Hamle Sayisi: %d\n", env.operation_counter);
+		printf("Toplam Hamle Sayisi: %d\n", env.operation_counter);
 
 	stack_free(env.a);
 	stack_free(env.b);
