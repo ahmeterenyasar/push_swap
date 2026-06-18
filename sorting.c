@@ -45,7 +45,6 @@ void to_top(t_environment *env, int en_uste_cikarilacak_hedef_deger)
 	}
     else
 	{
-		// O lanet '- 1' kısmını sildik, sadece 'size - index' yapıyoruz.
 		asagidan_kac_adimda_ulasilacagi = stack_a_toplam_eleman_sayisi - hedef_degerin_stackteki_konumu;
 		while (asagidan_kac_adimda_ulasilacagi-- > 0)
 			rra(env);
@@ -97,6 +96,21 @@ void small_sort(t_environment *env)
 	sort_three(env);
 }
 
+int get_max_bits(int n)
+{
+	int	bits;
+	int	max_val;
+ 
+	bits = 0;
+	max_val = n - 1;
+	while (max_val > 0)
+	{
+		max_val >>= 1;
+		bits++;
+	}
+	return (bits);
+}
+
 void radix_sort(t_environment *env)
 {
     int i;
@@ -110,8 +124,35 @@ void radix_sort(t_environment *env)
     {
         return (small_sort(env));
     }
+/*
+    radix sorta tam anlamıyla başlayabiliriz
+    bit karşılaştırması bit manipulation mantığıyla yapıcaz.
+	en sağdaki bitten başlayarak en büyük bite kadar her adıma bakıcaz
+    her bit adımı için şunlar
+    - if mevcut elemanın ilgili biti 0 ise, eleman pb ile B yığınına atılır
+    - if bit 1 ise, sırayı bozmamak için ra ile A yığınının arkasına itilir
+    stack A tüm elemanlar geçtikten sonra, 
+    stack B  biriken 0 bitli elemanlar pa ile sırayla tekrar Aya geri alınır
 
-    
-
-
+    */
+    int size;
+    int total_bits;
+    total_bits = get_max_bits(env->a->size);
+	bit = 0;
+	while (bit < total_bits)
+	{
+		size = env->a->size;
+		i = 0;
+		while (i < size)
+		{
+			if (((env->a->data[0] >> bit) & 1) == 0)
+				pb(env);
+			else
+				ra(env);
+			i++;
+		}
+		while (env->b->size > 0)
+			pa(env);
+		bit++;
+	}
 }
