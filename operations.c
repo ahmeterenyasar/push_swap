@@ -2,7 +2,15 @@
 
 void log_operation(t_environment *env, char *op_name)
 {
-
+    int length_of_operations_of_length_that_we_count_the_length_of_the_operations_that_they_have_been_written_on_terminal_which_it_is_a_whole_different_subject;
+    env->operation_counter++;
+    if (env->print_mode)
+    {
+        while(op_name[length_of_operations_of_length_that_we_count_the_length_of_the_operations_that_they_have_been_written_on_terminal_which_it_is_a_whole_different_subject])
+            length_of_operations_of_length_that_we_count_the_length_of_the_operations_that_they_have_been_written_on_terminal_which_it_is_a_whole_different_subject++;
+        write(1, op_name, length_of_operations_of_length_that_we_count_the_length_of_the_operations_that_they_have_been_written_on_terminal_which_it_is_a_whole_different_subject);
+        write(1, "\n", 1);
+    }
 }
 
 void swap(t_stack *stack)
