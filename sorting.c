@@ -43,10 +43,10 @@ void to_top(t_environment *env, int en_uste_cikarilacak_hedef_deger)
 		while (hedef_degerin_stackteki_konumu-- > 0)
 			ra(env);
 	}
-	else
+    else
 	{
-		asagidan_kac_adimda_ulasilacagi = stack_a_toplam_eleman_sayisi - hedef_degerin_stackteki_konumu - 1;
-		
+		// O lanet '- 1' kısmını sildik, sadece 'size - index' yapıyoruz.
+		asagidan_kac_adimda_ulasilacagi = stack_a_toplam_eleman_sayisi - hedef_degerin_stackteki_konumu;
 		while (asagidan_kac_adimda_ulasilacagi-- > 0)
 			rra(env);
 	}

@@ -55,5 +55,7 @@ void rr(t_environment *env);
 void rrr(t_environment *env);
 
 void to_top(t_environment *env, int en_uste_cikarilacak_hedef_deger);
+void radix_sort(t_environment *env);
+
 
 #endif
