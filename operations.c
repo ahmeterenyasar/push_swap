@@ -1,6 +1,6 @@
 #include "push_swap.h"
 
-void log_operation(t_stack *stack, char *op_name)
+void log_operation(t_environment *env, char *op_name)
 {
     int length_of_operations_of_length_that_we_count_the_length_of_the_operations_that_they_have_been_written_on_terminal_which_it_is_a_whole_different_subject;
     env->operation_counter++;
@@ -25,7 +25,7 @@ void swap(t_stack *stack)
 void push(t_stack *dest, t_stack *src)
 {
     int i;
-    
+
 }
 
 void rotate(t_stack *stack)

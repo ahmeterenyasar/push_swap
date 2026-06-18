@@ -37,13 +37,23 @@ int main(int argc, char **argv)
 		stack_free(env.b);
 		return (1);
 	}
+	
+    convert_to_indexed(env.a);
 
-	convert_to_indexed(env.a);
+    printf("--- Islemlerden ONCE Stack A ---\n");
+    for (int i = 0; i < env.a->size; i++)
+        printf("[%d] -> %d\n", i, env.a->data[i]);
 
-	printf("Indekslenmis stack Brrrrrr:\n");
-	for (int i = 0; i < env.a->size; i++)
-	    printf("[%d]\n", env.a->data[i]);
+    printf("\n--- Test Operasyonlari Basliyor ---\n");
+    
 
+    sa(&env); 
+	ra(&env);
+	rra(&env);
+
+    printf("\n--- Islemlerden SONRA Stack A ---\n");
+    for (int i = 0; i < env.a->size; i++)
+        printf("[%d] -> %d\n", i, env.a->data[i]);
 
 	stack_free(env.a);
 	stack_free(env.b);

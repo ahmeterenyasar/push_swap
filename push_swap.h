@@ -41,7 +41,10 @@ int		parser(t_stack *a, int argc, char **argv);
 int mükerrer_check(t_stack *a);
 void convert_to_indexed(t_stack *a);
 
-
+// Operations
+void sa(t_environment *env);
+void ra(t_environment *env);
+void rra(t_environment *env);
 
 
 #endif
