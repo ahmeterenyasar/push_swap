@@ -38,6 +38,13 @@ int main(int argc, char **argv)
 		return (1);
 	}
 
+	convert_to_indexed(env.a);
+
+	printf("Indekslenmis stack Brrrrrr:\n");
+	for (int i = 0; i < env.a->size; i++)
+	    printf("[%d]\n", env.a->data[i]);
+
+
 	stack_free(env.a);
 	stack_free(env.b);
 
