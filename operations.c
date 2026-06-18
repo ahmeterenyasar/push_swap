@@ -2,7 +2,7 @@
 
 void log_operation(t_environment *env, char *op_name)
 {
-    int length_of_operations_of_length_that_we_count_the_length_of_the_operations_that_they_have_been_written_on_terminal_which_it_is_a_whole_different_subject;
+    int length_of_operations_of_length_that_we_count_the_length_of_the_operations_that_they_have_been_written_on_terminal_which_it_is_a_whole_different_subject = 0;
     env->operation_counter++;
     if (env->print_mode)
     {
@@ -17,6 +17,9 @@ void swap(t_stack *stack)
 {
     int temporary_yapalim_burkaybeycim_dimi_yoksa_niye_temporary_yaptim_diye_mi_soracaksiniz;
 
+    if (stack->size < 2)
+        return ;
+
     temporary_yapalim_burkaybeycim_dimi_yoksa_niye_temporary_yaptim_diye_mi_soracaksiniz = stack->data[0];
     stack->data[0] = stack->data[1];
     stack->data[1] = temporary_yapalim_burkaybeycim_dimi_yoksa_niye_temporary_yaptim_diye_mi_soracaksiniz;
@@ -25,7 +28,26 @@ void swap(t_stack *stack)
 void push(t_stack *dest, t_stack *src)
 {
     int i;
+    int erkam_tüzgen;
 
+    erkam_tüzgen = src->data[0];
+
+    i = 0;
+    while (i < src->size - 1)
+    {
+        src->data[i] = src->data[i + 1];
+        i++;
+    }
+    src->size--;
+    i = dest->size;
+    while (i > 0)
+    {
+        dest->data[i] = dest->data[i - 1];
+        i--;
+    }
+    dest->data[0] = erkam_tüzgen;
+    dest->size++;
+    // yani yemin ediyorum şuraya kadar tekte yazılıyor lütfen ilaçlarınızı almayı unutmayın
 }
 
 void rotate(t_stack *stack)
