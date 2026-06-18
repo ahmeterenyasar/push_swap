@@ -25,6 +25,31 @@ int is_sorted(t_stack *a)
 
 void to_top(t_environment *env, int en_uste_cikarilacak_hedef_deger)
 {
+	int hedef_degerin_stackteki_konumu;
+	int stack_a_toplam_eleman_sayisi;
+	int asagidan_kac_adimda_ulasilacagi;
+
+	hedef_degerin_stackteki_konumu = 0;
+	
+	while (env->a->data[hedef_degerin_stackteki_konumu] != en_uste_cikarilacak_hedef_deger)
+	{
+		hedef_degerin_stackteki_konumu++;
+	}
+		
+	stack_a_toplam_eleman_sayisi = env->a->size;
+	
+	if (hedef_degerin_stackteki_konumu <= (stack_a_toplam_eleman_sayisi / 2))
+	{
+		while (hedef_degerin_stackteki_konumu-- > 0)
+			ra(env);
+	}
+	else
+	{
+		asagidan_kac_adimda_ulasilacagi = stack_a_toplam_eleman_sayisi - hedef_degerin_stackteki_konumu - 1;
+		
+		while (asagidan_kac_adimda_ulasilacagi-- > 0)
+			rra(env);
+	}
 }
 
 void sort_three(t_environment *env)
