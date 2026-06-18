@@ -54,6 +54,25 @@ void to_top(t_environment *env, int en_uste_cikarilacak_hedef_deger)
 
 void sort_three(t_environment *env)
 {
+	int *numbers;
+
+	numbers = env->a->data;
+	if (numbers[0] > numbers[1] && numbers[1] < numbers[2] && numbers[2] > numbers[0])
+		sa(env);
+	else if (numbers[0] > numbers[1] && numbers[1] > numbers[2])
+	{
+		sa(env);
+		rra(env);
+	}
+	else if (numbers[0] > numbers[1] && numbers[2] < numbers[0])
+		ra(env);
+	else if (numbers[0] < numbers[1] && numbers[1] > numbers[2] && numbers[2] > numbers[0])
+	{
+		sa(env);
+		ra(env);
+	}
+	else if (numbers[0] < numbers[1] && numbers[2] < numbers[0])
+		rra(env);
 }
 
 
@@ -67,9 +86,6 @@ void small_sort(t_environment *env)
 			sa(env);
 		return ;
 	}
-    /*
-    mantık şöyle a'da 3 tane bırakıcaz o yüzden çıkarma işlemi yapıcaz b'de kaç tane olacağını bulabilmek için
-    */
 	b_stackine_gonderilecek_eleman_sayisi = env->a->size - 3;
 	su_an_aranan_kucuk_deger = 0;
 	while (su_an_aranan_kucuk_deger < b_stackine_gonderilecek_eleman_sayisi)
