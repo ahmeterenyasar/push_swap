@@ -94,6 +94,10 @@ void small_sort(t_environment *env)
 		su_an_aranan_kucuk_deger++;
 	}
 	sort_three(env);
+	while (env->b->size > 0)
+	{
+		pa(env);
+	}
 }
 
 int get_max_bits(int n)
@@ -124,17 +128,7 @@ void radix_sort(t_environment *env)
     {
         return (small_sort(env));
     }
-/*
-    radix sorta tam anlamıyla başlayabiliriz
-    bit karşılaştırması bit manipulation mantığıyla yapıcaz.
-	en sağdaki bitten başlayarak en büyük bite kadar her adıma bakıcaz
-    her bit adımı için şunlar
-    - if mevcut elemanın ilgili biti 0 ise, eleman pb ile B yığınına atılır
-    - if bit 1 ise, sırayı bozmamak için ra ile A yığınının arkasına itilir
-    stack A tüm elemanlar geçtikten sonra, 
-    stack B  biriken 0 bitli elemanlar pa ile sırayla tekrar Aya geri alınır
 
-    */
     int size;
     int total_bits;
     total_bits = get_max_bits(env->a->size);
