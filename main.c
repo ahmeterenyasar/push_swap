@@ -22,7 +22,6 @@ int main(int argc, char **argv)
 
 	env.operation_counter = 0;
 	env.print_mode = 1;
-
 	if (!parser(env.a, argc, argv) || !mükerrer_check(env.a))
 	{
 		write(2, "Error\n", 6);
@@ -30,15 +29,8 @@ int main(int argc, char **argv)
 		stack_free(env.b);
 		return (1);
 	}
-
 	convert_to_indexed(env.a);
-	
 	radix_sort(&env);
-
-
-	// if (env.print_mode == 0)
-		printf("Toplam Hamle Sayisi: %d\n", env.operation_counter);
-
 	stack_free(env.a);
 	stack_free(env.b);
 
