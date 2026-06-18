@@ -22,9 +22,10 @@ void swap(t_stack *stack)
     stack->data[1] = temporary_yapalim_burkaybeycim_dimi_yoksa_niye_temporary_yaptim_diye_mi_soracaksiniz;
 }
 
-void push(t_stack *stack)
+void push(t_stack *dest, t_stack *src)
 {
-
+    int i;
+    
 }
 
 void rotate(t_stack *stack)
