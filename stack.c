@@ -1,13 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   stack.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayasar <ayasar@student.42istanbul.com.t    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/06/23 18:25:53 by ayasar            #+#    #+#             */
+/*   Updated: 2026/06/23 18:26:09 by ayasar           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
 t_stack	*stack_init(int capacity)
 {
-    t_stack	*stack;
+	t_stack	*stack;
+
 	stack = (t_stack *)malloc(sizeof(t_stack));
-    stack->capacity = capacity;
+	stack->capacity = capacity;
 	stack->size = 0;
 	stack->data = (int *)malloc(sizeof(int) * capacity);
-    if (!stack->data)
+	if (!stack->data)
 	{
 		free(stack);
 		return (NULL);
