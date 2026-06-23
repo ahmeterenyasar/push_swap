@@ -6,7 +6,7 @@
 /*   By: ayasar <ayasar@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:25:32 by ayasar            #+#    #+#             */
-/*   Updated: 2026/06/23 18:25:33 by ayasar           ###   ########.fr       */
+/*   Updated: 2026/06/23 18:28:51 by ayasar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,11 @@ int	main(int argc, char **argv)
 	env.a = stack_init(capacity);
 	env.b = stack_init(capacity);
 	if (!env.a || !env.b)
+	{
+		stack_free(env.a);
+		stack_free(env.b);
 		return (1);
+	}
 	env.operation_counter = 0;
 	env.print_mode = 1;
 	if (!parser(env.a, argc, argv) || !has_no_copies(env.a))
@@ -38,7 +42,13 @@ int	main(int argc, char **argv)
 		stack_free(env.b);
 		return (1);
 	}
-	convert_to_indexed(env.a);
+	if (!convert_to_indexed(env.a))
+	{
+		write(2, "Error\n", 6);
+		stack_free(env.a);
+		stack_free(env.b);
+		return (1);
+	}
 	radix_sort(&env);
 	stack_free(env.a);
 	stack_free(env.b);

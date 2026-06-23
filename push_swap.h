@@ -6,7 +6,7 @@
 /*   By: ayasar <ayasar@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:26:02 by ayasar            #+#    #+#             */
-/*   Updated: 2026/06/23 18:26:29 by ayasar           ###   ########.fr       */
+/*   Updated: 2026/06/23 18:28:07 by ayasar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,11 @@ typedef struct s_environment
 t_stack		*stack_init(int capacity);
 void		stack_free(t_stack *stack);
 
-// Parsing
 int			get_total_capacity(int argc, char **argv);
 int			parser(t_stack *a, int argc, char **argv);
 int			has_no_copies(t_stack *a);
-void		convert_to_indexed(t_stack *a);
+int			convert_to_indexed(t_stack *a);
 
-// Operations
 void		sa(t_environment *env);
 void		sb(t_environment *env);
 void		ss(t_environment *env);
