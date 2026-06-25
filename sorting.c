@@ -6,50 +6,11 @@
 /*   By: ayasar <ayasar@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:25:42 by ayasar            #+#    #+#             */
-/*   Updated: 2026/06/23 18:26:12 by ayasar           ###   ########.fr       */
+/*   Updated: 2026/06/25 15:49:18 by ayasar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	is_sorted(t_stack *a)
-{
-	int	i;
-
-	i = 0;
-	while (i < a->size - 1)
-	{
-		if (a->data[i] > a->data[i + 1])
-			return (0);
-		i++;
-	}
-	return (1);
-}
-
-void	to_top(t_environment *env, int wanted_number)
-{
-	int	current_location;
-	int	total_items;
-	int	inverse_distance;
-
-	current_location = 0;
-	while (env->a->data[current_location] != wanted_number)
-	{
-		current_location++;
-	}
-	total_items = env->a->size;
-	if (current_location <= (total_items / 2))
-	{
-		while (current_location-- > 0)
-			ra(env);
-	}
-	else
-	{
-		inverse_distance = total_items - current_location;
-		while (inverse_distance-- > 0)
-			rra(env);
-	}
-}
 
 void	sort_three(t_environment *env)
 {
@@ -102,26 +63,24 @@ void	small_sort(t_environment *env)
 	}
 }
 
-int	get_max_bits(int n)
+static void	process_radix_bit(t_environment *env, int bit, int size)
 {
-	int	bits;
-	int	max_val;
+	int	i;
 
-	bits = 0;
-	max_val = n - 1;
-	while (max_val > 0)
+	i = 0;
+	while (i < size)
 	{
-		max_val >>= 1;
-		bits++;
+		if (((env->a->data[0] >> bit) & 1) == 0)
+			pb(env);
+		else
+			ra(env);
+		i++;
 	}
-	return (bits);
 }
 
 void	radix_sort(t_environment *env)
 {
-	int	i;
 	int	bit;
-	int	size;
 	int	total_bits;
 
 	if (is_sorted(env->a))
@@ -135,16 +94,7 @@ void	radix_sort(t_environment *env)
 	bit = 0;
 	while (bit < total_bits)
 	{
-		size = env->a->size;
-		i = 0;
-		while (i < size)
-		{
-			if (((env->a->data[0] >> bit) & 1) == 0)
-				pb(env);
-			else
-				ra(env);
-			i++;
-		}
+		process_radix_bit(env, bit, env->a->size);
 		while (env->b->size > 0)
 			pa(env);
 		bit++;
