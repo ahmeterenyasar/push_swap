@@ -6,7 +6,7 @@
 #    By: ayasar <ayasar@student.42istanbul.com.t    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/06/23 18:25:24 by ayasar            #+#    #+#              #
-#    Updated: 2026/06/25 15:41:33 by ayasar           ###   ########.fr        #
+#    Updated: 2026/06/25 15:53:20 by ayasar           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,15 @@ CFLAGS = -Wall -Wextra -Werror
 
 SRCS = main.c \
 	parser.c \
+	parser_utils.c \
 	sorting.c \
+	sorting_utils.c \
 	stack.c \
 	utils.c \
 	push_operations.c \
 	rotate_operations.c \
-	reverse_rotate_operations.c
+	reverse_rotate_operations.c \
+	swap_operations.c \
 
 OBJS = $(SRCS:.c=.o)
 

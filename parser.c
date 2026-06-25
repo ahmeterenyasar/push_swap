@@ -5,58 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayasar <ayasar@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/06/23 18:32:15 by ayasar            #+#    #+#             */
-/*   Updated: 2026/06/25 15:47:09 by ayasar           ###   ########.fr       */
+/*   Created: 2026/06/25 15:51:27 by ayasar            #+#    #+#             */
+/*   Updated: 2026/06/25 15:52:26 by ayasar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	is_space(char c)
-{
-	return (c == ' ' || c == '\t' || c == '\n');
-}
-
-static int	is_digit(char c)
-{
-	return (c >= '0' && c <= '9');
-}
-
-static long	ft_strict_atol(const char **s, int *er_mg)
-{
-	long	res;
-	int		result_sign;
-
-	res = 0;
-	result_sign = 1;
-	if (**s == '-' || **s == '+')
-	{
-		if (**s == '-')
-			result_sign = -1;
-		(*s)++;
-	}
-	if (!is_digit(**s))
-	{
-		*er_mg = 1;
-		return (0);
-	}
-	while (is_digit(**s))
-	{
-		if (res > 214748364 || (res == 214748364 && (**s - '0') > 8))
-		{
-			*er_mg = 1;
-			return (0);
-		}
-		res = res * 10 + (**s - '0');
-		(*s)++;
-	}
-	if (**s != '\0' && !is_space(**s))
-	{
-		*er_mg = 1;
-		return (0);
-	}
-	return (res * result_sign);
-}
 
 static int	count_numbers_in_str(char *ptr)
 {

@@ -6,7 +6,7 @@
 /*   By: ayasar <ayasar@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:26:02 by ayasar            #+#    #+#             */
-/*   Updated: 2026/06/23 18:28:07 by ayasar           ###   ########.fr       */
+/*   Updated: 2026/06/25 15:54:42 by ayasar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,13 @@ void		rrr(t_environment *env);
 void		to_top(t_environment *env, int wanted_number);
 void		radix_sort(t_environment *env);
 int			get_max_bits(int n);
+
+int			is_space(char c);
+int			is_digit(char c);
+long		ft_strict_atol(const char **s, int *er_mg);
+
+int			is_sorted(t_stack *a);
+void		log_operation(t_environment *env, char *op_name);
+int			convert_to_indexed(t_stack *a);
 
 #endif
