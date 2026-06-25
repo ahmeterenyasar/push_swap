@@ -6,7 +6,7 @@
 /*   By: ayasar <ayasar@student.42istanbul.com.t    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/23 18:25:56 by ayasar            #+#    #+#             */
-/*   Updated: 2026/06/23 18:27:40 by ayasar           ###   ########.fr       */
+/*   Updated: 2026/06/25 15:40:58 by ayasar           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,19 @@ int	convert_to_indexed(t_stack *a)
 	free(a->data);
 	a->data = new_arr;
 	return (1);
+}
+
+void	log_operation(t_environment *env, char *op_name)
+{
+	int	operation_length;
+
+	operation_length = 0;
+	env->operation_counter++;
+	if (env->print_mode)
+	{
+		while (op_name[operation_length])
+			operation_length++;
+		write(1, op_name, operation_length);
+		write(1, "\n", 1);
+	}
 }
